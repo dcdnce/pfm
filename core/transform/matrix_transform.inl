@@ -41,7 +41,7 @@ namespace pfm {
     }
 
     template<typename T>
-    PFM_FUNC_DECL mat<4, 4, T> lookRotation(vec<3, T> const& forward, vec<3, T> const& up = vec3(0.f, 1.f, 0.f))
+    PFM_FUNC_DECL mat<4, 4, T> lookRotation(vec<3, T> const& forward, vec<3, T> const& up)
 	{
         vec<3, T> z = normalize(forward);
         vec<3, T> x = normalize(cross(z, up));
@@ -52,17 +52,17 @@ namespace pfm {
 		ret[0][0] = x.x;
 		ret[1][0] = x.y;
 		ret[2][0] = x.z;
-		ret[3][0] = -dot(x, eye);
+		ret[3][0] = -dot(x, forward);
 
 		ret[0][1] = y.x;
 		ret[1][1] = y.y;
 		ret[2][1] = y.z;
-		ret[3][1] = -dot(y, eye);
+		ret[3][1] = -dot(y, forward);
 
 		ret[0][2] = -z.x;
 		ret[1][2] = -z.y;
 		ret[2][2] = -z.z;
-		ret[3][2] = dot(z, eye);
+		ret[3][2] = dot(z, forward);
 
 		ret[0][3] = 0.f;
 		ret[1][3] = 0.f;

@@ -34,4 +34,15 @@ namespace pfm {
             v1.x * v2.y - v1.y * v2.x
         );
     }
+
+    template<typename T>
+    PFM_INLINE double magnitude(vec<3, T> const& v)
+    {
+        return sqrt(
+            static_cast<double>(v.x) * static_cast<double>(v.x)
+            + static_cast<double>(v.y) * static_cast<double>(v.y)
+            + static_cast<double>(v.z) * static_cast<double>(v.z)
+        );
+    }
+
 }

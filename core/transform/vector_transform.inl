@@ -45,4 +45,12 @@ namespace pfm {
         );
     }
 
+    PFM_INLINE vec<3, float> sphericalToCartesian(float const& p, float const& phi, float const& theta)
+    {
+        return vec3(
+            p * sin(radians(phi)) * cos(radians(theta)),
+            p * cos(radians(phi)),
+            p * sin(radians(phi)) * sin(radians(theta))
+        );
+    }
 }

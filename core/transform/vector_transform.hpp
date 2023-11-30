@@ -14,6 +14,8 @@ namespace pfm {
 
     template<typename T>
     PFM_FUNC_DECL double magnitude(vec<3, T> const& v); 
+
+    PFM_FUNC_DECL vec<3, float> sphericalToCartesian(float const& p, float const& phi, float const& theta);
 }
 
 #include "vector_transform.inl"

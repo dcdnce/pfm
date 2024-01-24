@@ -13,8 +13,8 @@ namespace pfm {
         typedef vec<2, T> type;
 
         // Data
-        union { T x, r;};
-        union { T y, g;};
+        union { T x, r, u;};
+        union { T y, g, v;};
 
         // Accesses
         PFM_FUNC_DECL value_type& operator[](length_t i) noexcept;

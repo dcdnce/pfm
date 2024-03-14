@@ -80,6 +80,8 @@ namespace pfm {
     PFM_FUNC_DECL vec<4, T> operator/(T scalar, vec<4, T> const& v);
     template<typename T>
     PFM_FUNC_DECL vec<4, T> operator*(vec<4, T> const& v, T scalar);
+    template<typename T>
+    PFM_FUNC_DECL vec<4, T> operator*(mat<4, 4, T> const& m, vec<4, T> const& v);
 
     // Boolean operators
     template<typename T>

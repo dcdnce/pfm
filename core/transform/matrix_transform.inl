@@ -92,6 +92,20 @@ namespace pfm {
 	}
 
 	template<typename T>
+	PFM_FUNC_DECL mat<4, 4, T> orthographic(T left, T right, T bottom, T top, T zNear, T zFar)
+	{
+		mat<4, 4, T>  Result(static_cast<T>(1));
+		Result[0][0] = static_cast<T>(2) / (right - left);
+		Result[1][1] = static_cast<T>(2) / (top - bottom);
+		Result[2][2] = static_cast<T>(1) / (zFar - zNear);
+		Result[3][0] = - (right + left) / (right - left);
+		Result[3][1] = - (top + bottom) / (top - bottom);
+		Result[3][2] = - zNear / (zFar - zNear);
+		return Result;
+	}
+
+
+	template<typename T>
     PFM_FUNC_DECL mat<4, 4, T> rotate(mat<4, 4, T> const& m, T const& a, vec<3, T> const& v)
 	{
 		T const c = cos(a);

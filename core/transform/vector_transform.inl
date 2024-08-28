@@ -64,6 +64,16 @@ namespace pfm {
         );
     }
 
+    template<typename T>
+    PFM_INLINE double magnitude(vec<2, T> const& v)
+    {
+        return sqrt(
+            static_cast<double>(v.x) * static_cast<double>(v.x)
+            + static_cast<double>(v.y) * static_cast<double>(v.y)
+        );
+    }
+
+
     PFM_INLINE vec<3, float> sphericalToCartesian(float const& p, float const& phi, float const& theta)
     {
         return vec3(

@@ -4,10 +4,10 @@
 
 namespace pfm {
     // Implicit basic constructors
-    template<typename T>
-    PFM_INLINE mat<4, 4, T>::mat(mat<4, 4, T> const& m)
-        : value{col_type(m[0]), col_type(m[1]), col_type(m[2]), col_type(m[3])}
-    {}
+    // template<typename T>
+    // PFM_INLINE mat<4, 4, T>::mat(mat<4, 4, T> const& m)
+    //     : value{col_type(m[0]), col_type(m[1]), col_type(m[2]), col_type(m[3])}
+    // {}
 
     // Explicit basic constructors
     template<typename T>

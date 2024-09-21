@@ -23,7 +23,7 @@ namespace pfm {
 
         // Implicit basic constructors
         PFM_FUNC_DECL mat() PFM_DEFAULT;
-        PFM_FUNC_DECL mat(mat<4, 4, T> const& m);
+        // PFM_FUNC_DECL mat(mat<4, 4, T> const& m) PFM_DEFAULT;
 
         // Explicit basic constructors
         PFM_FUNC_DECL PFM_EXPLICIT mat(T scalar);

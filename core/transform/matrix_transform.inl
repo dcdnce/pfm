@@ -8,6 +8,14 @@ namespace pfm {
         return (ret);
     }
 
+	// Build an orthonormal camera basis (x=right, y=up, z=forward), then the view
+	// matrix that maps world -> camera space: rotate into that basis and translate
+	// by -eye expressed in camera axes (4th column: -dot(axis, eye); +dot(z, eye)
+	// because OpenGL looks down -Z).
+
+	// rx = x.x*px + x.y*py + x.z*pz + (-dot(x, eye))
+	// ry = y.x*px + y.y*py + y.z*pz + (-dot(y, eye))
+	// rz = -z.x*px + -z.y*py + -z.z*pz + (dot(z, eye))
     template<typename T>
     PFM_INLINE mat<4, 4, T> lookAt(vec<3, T> const& eye, vec<3, T> const& target, vec<3, T> const& up)
     {

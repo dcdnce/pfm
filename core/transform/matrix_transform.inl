@@ -143,5 +143,17 @@ namespace pfm {
 		return Result;
 	}
 
+	template<typename T>
+    PFM_FUNC_DECL mat<4, 4, T> scale(mat<4, 4, T> const& m, vec<3, T> const& v)
+	{
+		mat<4, 4, T> Result(m);
+
+		Result[0] = m[0] * v.x;
+		Result[1] = m[1] * v.y;
+		Result[2] = m[2] * v.z;
+		Result[3] = m[3];
+		return Result;
+	}
+
 }
 

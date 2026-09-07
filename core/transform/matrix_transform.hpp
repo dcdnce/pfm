@@ -24,6 +24,9 @@ namespace pfm {
 
     template<typename T>
     PFM_FUNC_DECL mat<4, 4, T> rotate(mat<4, 4, T> const& m, T const& a, vec<3, T> const& v);
+
+    template<typename T>
+    PFM_FUNC_DECL mat<4, 4, T> scale(mat<4, 4, T> const& m, vec<3, T> const& v);
 }
 
 #include "matrix_transform.inl"
